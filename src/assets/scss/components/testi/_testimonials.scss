@@ -1,0 +1,107 @@
+.testi{
+    text-align: center;
+
+    .title p {
+        color: colors.$txt_color;
+        width: 60%;
+        margin: auto;
+    }
+
+    // Three equal-height cards on one row (Bootstrap grid handles the gutters)
+    .testimonial{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        background: colors.$white_color;
+        box-shadow: colors.$shadow;
+        border-radius: variables.$radius;
+        padding: 30px 24px 26px;
+        cursor: pointer;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+        // gradient accent that slides in from the left on hover
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: colors.$bg_color;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.45s ease;
+        }
+
+        &__icon{
+            width: 56px;
+            height: 56px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(130, 97, 238, 0.1);
+            transition: variables.$trans;
+
+            img{
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &__text{
+            flex: 1;
+            text-align: left;
+            color: colors.$txt_color;
+            padding: 22px 0;
+            margin: 0;
+            line-height: 1.7;
+            transition: variables.$trans;
+        }
+
+        .desc{
+            padding-top: 18px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            transition: variables.$trans;
+
+            h5{
+                margin-bottom: 2px;
+                transition: variables.$trans;
+            }
+
+            p{
+                margin: 0;
+                color: colors.$red_color;
+            }
+        }
+
+        &:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 18px 55px 0 rgba(130, 97, 238, 0.25);
+
+            &::before{
+                transform: scaleX(1);
+            }
+
+            .testimonial__icon{
+                background: colors.$hover_color;
+                transform: rotate(-8deg) scale(1.08);
+
+                img{
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            .testimonial__text{
+                color: colors.$black_color;
+            }
+
+            .desc h5{
+                color: colors.$hover_color;
+            }
+        }
+    }
+}

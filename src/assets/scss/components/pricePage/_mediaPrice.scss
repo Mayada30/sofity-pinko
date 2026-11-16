@@ -1,0 +1,17 @@
+@media (max-width: 991px) {
+    .price .title p{
+        width: 70%;
+    }
+}
+@media (max-width: 767px) {
+    .price{
+        .title p{
+            width: 100%;
+        }
+
+        .list{
+            max-width: 420px;
+            margin: 0 auto;
+        }
+    }
+}

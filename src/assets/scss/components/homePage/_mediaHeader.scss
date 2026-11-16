@@ -1,0 +1,43 @@
+// Compact the links on small laptops so the bar never wraps
+@media (min-width: 992px) and (max-width: 1199px) {
+    .navbar .links .nav-link{
+        font-size: 13px;
+        padding: 8px 8px;
+    }
+}
+
+// Tablet & mobile: collapsed menu inside the same glass pill
+@media (max-width: 991px) {
+    .navbar{
+        top: 12px;
+        width: calc(100% - 24px);
+        padding: 8px 16px;
+        border-radius: variables.$radius;
+
+        &--scrolled{
+            top: 8px;
+        }
+
+        .links{
+            margin: 10px 0 4px;
+            text-align: center;
+
+            .nav-link{
+                padding: 10px 0;
+
+                &::after{
+                    bottom: 0;
+                }
+
+                &:not(:last-child){
+                    border-bottom: 1px solid colors.$gray_color;
+                }
+
+                &:hover::after,
+                &.active::after{
+                    width: 0;
+                }
+            }
+        }
+    }
+}

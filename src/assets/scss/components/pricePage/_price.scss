@@ -1,0 +1,145 @@
+.price{
+    background-color: #f2f2fe;
+    padding: 55px 0 35px;
+
+    .title{
+        color: colors.$black_color;
+        text-align: center;
+
+        p{
+            color: colors.$txt_color;
+            width: 40%;
+            margin: auto;
+        }
+    }
+
+    // Three equal-height cards on one row.
+    // Content order: plan name > description > price > purchase button
+    .list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        background: colors.$white_color;
+        box-shadow: colors.$shadow;
+        border-radius: variables.$radius;
+        padding: 30px 24px 36px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: colors.$hover_color;
+            transition: height 0.35s ease, background-color 0.35s ease;
+        }
+
+        .name{
+            font-weight: 600;
+            font-size: variables.$h5_size;
+            color: colors.$black_color;
+            margin-bottom: 18px;
+        }
+
+        .details{
+            width: 100%;
+            flex: 1;
+            margin-bottom: 24px;
+
+            p{
+                color: colors.$txt_color;
+                padding: 9px 0;
+                margin: 0;
+                border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+                transition: variables.$trans;
+
+                &:last-child{
+                    border-bottom: none;
+                }
+            }
+
+            del{
+                opacity: 0.55;
+            }
+        }
+
+        .num{
+            background-color: colors.$hover_color;
+            width: 70%;
+            min-width: 150px;
+            padding: 10px 0;
+            border-radius: variables.$radius;
+            color: colors.$white_color;
+            box-shadow: colors.$shadow;
+            margin-bottom: 24px;
+            transition: variables.$trans;
+
+            p{
+                font-size: 20px;
+                margin: 0;
+
+                span{
+                    font-size: 25px;
+                }
+            }
+
+            small{
+                opacity: 0.85;
+            }
+        }
+
+        button{
+            background-color: colors.$hover_color;
+            border-radius: variables.$radius;
+            border: none;
+            padding: 10px 24px;
+            transition: variables.$trans;
+        }
+
+        // Highlighted (middle) plan keeps the original pink accent
+        &--featured{
+            .num{
+                background-color: colors.$red_color;
+            }
+
+            &::before{
+                background: colors.$red_color;
+            }
+        }
+
+        &:hover{
+            transform: translateY(-14px);
+            box-shadow: 0 22px 60px 0 rgba(130, 97, 238, 0.28);
+
+            &::before{
+                height: 8px;
+            }
+
+            .num{
+                transform: scale(1.06);
+            }
+
+            .details p{
+                color: colors.$black_color;
+            }
+
+            button{
+                background-color: colors.$red_color;
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(255, 88, 158, 0.4);
+            }
+        }
+
+        &--featured:hover button{
+            background-color: colors.$hover_color;
+            box-shadow: 0 8px 20px rgba(130, 97, 238, 0.4);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@media (max-width: 991px) {
+    .blog .title p{
+        width: 80%;
+    }
+}
+@media (max-width: 767px) {
+    .blog{
+        .title p{
+            width: 100%;
+        }
+
+        .entry{
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    }
+}

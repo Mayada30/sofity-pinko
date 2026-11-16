@@ -1,0 +1,18 @@
+@media (max-width: 991px) {
+    .count{
+        padding: 80px 20px;
+
+        .img_rate{
+            display: none;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .count{
+        padding: 60px 10px;
+
+        .rate .rate_num p{
+            font-size: 34px;
+        }
+    }
+}

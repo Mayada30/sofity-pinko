@@ -1,0 +1,57 @@
+.count{
+    background-image: url('../../../images/fun-facts-bg.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 100px 50px;
+    text-align: center;
+
+    .rate{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover{
+            .rate_num{
+                transform: translateY(-10px);
+
+                p{
+                    text-shadow: 0 6px 24px rgba(255, 255, 255, 0.45);
+                }
+            }
+        }
+
+        .rate_num{
+            transition: variables.$trans;
+            cursor: default;
+
+            p{
+                font-size: 42px;
+                font-weight: variables.$font_bold;
+                line-height: 1.1;
+                margin: 0 0 4px;
+                color: colors.$white_color;
+                // equal-width digits so the number does not jitter while counting
+                font-variant-numeric: tabular-nums;
+                transition: text-shadow 0.3s ease;
+            }
+
+            span{
+                color: colors.$white_color;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        // dots divider sits on the boundary between two columns,
+        // so every number stays centered in an equal quarter
+        .img_rate{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+            opacity: 0.9;
+            line-height: 0;
+        }
+    }
+}

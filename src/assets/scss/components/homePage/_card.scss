@@ -1,0 +1,42 @@
+.cards{
+    padding-top: 30px;
+    margin-top: -220px;
+    position: relative;
+    z-index: 9;
+
+    .card{
+        display: block;
+        background: colors.$white_color;
+        box-shadow: colors.$shadow;
+        border-radius: variables.$radius;
+        border: none;
+        padding: 30px;
+        text-align: center;
+        cursor: pointer;
+        transition: variables.$trans;
+        position: relative;
+
+        &:hover{
+            transform: translateY(-10px);
+
+            .img{
+                background-color: colors.$red_color;
+            }
+        }
+
+        .img{
+            background-color: colors.$hover_color;
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            padding: 20px;
+            margin: 0 auto 30px;
+            transition: variables.$trans;
+        }
+
+        p{
+            color: colors.$txt_color;
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@media (max-width: 991px) {
+    .work{
+        padding: 80px 20px;
+
+        .title p{
+            width: 70%;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .work{
+        padding: 70px 10px;
+    }
+    .title{
+        p{
+            width: 100% !important;
+        }
+    }
+}
